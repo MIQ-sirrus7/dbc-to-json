@@ -1,0 +1,15 @@
+name: publish package on push to master
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ELEVAT_ACCESS_TOKEN }}
+        run: |
+          npm ci
+          npm publish
