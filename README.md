@@ -6,6 +6,12 @@ Will also provide a list of possibly incorrect signal definitions (like having b
 ## Usage
 Go to https://viriciti.github.io/dbc-to-json/ and upload a .dbc file. Open your browser's console to see if there's any mistakes in the .dbc file. Fix those (using the line number provided) and reupload.
 
+## Changes from Original
+
+This section documents any significant changes to the original source code, as mandated by the GPL 3.0 license
+
+- Automatic conversion of imperial units to metric has been removed
+
 ## Example input
 See meta/test-input/00_ReadmeExample.dbc
 ```

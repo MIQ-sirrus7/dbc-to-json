@@ -79,46 +79,6 @@ describe("Transmutator Tests", () => {
 		expect(result.params[2].signals[1].name).to.equal("LittleEndianUnsignedInt")
 		expect(result.params[2].signals[1].dataType).to.equal("int")
 	})
-
-	it("Should auto-convert metric postfixes", () => {
-		let dbcString = fs.readFileSync("./meta/test-input/05_postfixes.dbc", "UTF-8")
-		let result = transmutator(dbcString)
-		expect(result.params[0].signals[0].name).to.equal("temperature1")
-		expect(result.params[0].signals[0].sourceUnit).to.equal("°C")
-		expect(result.params[0].signals[0].postfixMetric).to.equal("°C")
-		expect(result.params[0].signals[0].postfixImperial).to.equal("°F")
-
-		expect(result.params[0].signals[1].name).to.equal("distance1")
-		expect(result.params[0].signals[1].sourceUnit).to.equal("km")
-		expect(result.params[0].signals[1].postfixMetric).to.equal("km")
-		expect(result.params[0].signals[1].postfixImperial).to.equal("mi")
-
-		expect(result.params[0].signals[2].name).to.equal("speed1")
-		expect(result.params[0].signals[2].sourceUnit).to.equal("km/h")
-		expect(result.params[0].signals[2].postfixMetric).to.equal("km/h")
-		expect(result.params[0].signals[2].postfixImperial).to.equal("mi/h")
-
-		expect(result.params[1].signals[0].name).to.equal("temperature2")
-		expect(result.params[1].signals[0].sourceUnit).to.equal("°F")
-		expect(result.params[1].signals[0].postfixMetric).to.equal("°C")
-		expect(result.params[1].signals[0].postfixImperial).to.equal("°F")
-		expect(result.params[1].signals[0].min).to.be.above(-17.778)
-		expect(result.params[1].signals[0].min).to.be.below(-17.777)
-		expect(result.params[1].signals[0].max).to.be.above(93.333)
-		expect(result.params[1].signals[0].max).to.be.below(93.334)
-
-		expect(result.params[2].signals[0].name).to.equal("tripdistance")
-		expect(result.params[2].signals[0].sourceUnit).to.equal("m")
-		expect(result.params[2].signals[0].postfixMetric).to.equal("km")
-		expect(result.params[2].signals[0].postfixImperial).to.equal("mi")
-		expect(result.params[2].signals[0].factor).to.equal(0.0005)
-		expect(result.params[2].signals[0].offset).to.equal(0.1)
-
-		expect(result.params[2].signals[1].name).to.equal("custom")
-		expect(result.params[2].signals[1].sourceUnit).to.equal("bananas")
-		expect(result.params[2].signals[1].postfixMetric).to.equal("bananas")
-		expect(result.params[2].signals[1].postfixImperial).to.be.undefined
-	})
 	// TODO: add test where isExtendedFrame is false
 
 	it("Should convert 1-bit signed integers to 1-bit unsigned integers", () => {
