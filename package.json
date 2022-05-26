@@ -1,6 +1,6 @@
 {
   "name": "@miq-sirrus7/dbc-to-json",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "main": "src/transmutator.js",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MIQ-sirrus/dbc-to-json.git"
+    "url": "git+https://github.com/MIQ-sirrus7/dbc-to-json.git"
   },
   "keywords": [],
   "author": "",
   "license": "GPL v3",
   "bugs": {
-    "url": "https://github.com/MIQ-sirrus/dbc-to-json/issues"
+    "url": "https://github.com/MIQ-sirrus7/dbc-to-json/issues"
   },
-  "homepage": "https://github.com/MIQ-sirrus/dbc-to-json#readme",
+  "homepage": "https://github.com/MIQ-sirrus7/dbc-to-json#readme",
   "dependencies": {
     "debug": "^4.1.1",
     "nconf": "^0.11.2",
